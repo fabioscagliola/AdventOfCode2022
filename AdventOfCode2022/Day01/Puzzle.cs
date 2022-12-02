@@ -16,7 +16,7 @@ namespace com.fabioscagliola.AdventOfCode2022.Day01
 
             foreach (Match match in matchCollection)
             {
-                if (match.Success && !string.IsNullOrEmpty(match.Value))
+                if (!string.IsNullOrWhiteSpace(match.Value))
                 {
                     calories += int.Parse(match.Value);
                 }

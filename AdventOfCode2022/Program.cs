@@ -1,5 +1,27 @@
-﻿string input = File.ReadAllText("Day01\\Input1.txt");
-com.fabioscagliola.AdventOfCode2022.Day01.Puzzle1 puzzle1 = new();
-Console.WriteLine(puzzle1.Solve(input));
-com.fabioscagliola.AdventOfCode2022.Day01.Puzzle2 puzzle2 = new();
-Console.WriteLine(puzzle2.Solve(input));
+﻿using System.Reflection;
+
+namespace com.fabioscagliola.AdventOfCode2022
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Assembly assembly = Assembly.GetExecutingAssembly();
+
+            List<Type> typeList = assembly.GetTypes().Where(type => type.GetInterface(nameof(ISolvable)) != null).ToList();
+
+            typeList.Sort((a, b) => a.FullName.CompareTo(b.FullName));
+
+            foreach (Type type in typeList)
+            {
+                string path = type.Namespace.Split('.').Last();
+
+                string input = File.ReadAllText($"{path}\\Input1.txt");
+
+                ISolvable solvable = (ISolvable)Activator.CreateInstance(type);
+
+                Console.WriteLine($"{type.FullName}: {solvable.Solve(input)}");
+            }
+        }
+    }
+}
