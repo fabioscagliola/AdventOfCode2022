@@ -1,12 +1,5 @@
 ﻿namespace com.fabioscagliola.AdventOfCode2022.Day02
 {
-    enum Shape
-    {
-        Rock = 1,
-        Paper = 2,
-        Scissors = 3,
-    }
-
     abstract class Game
     {
         public Shape Shape1 { get; protected set; }
@@ -38,70 +31,6 @@
                     break;
                 case "C":
                     Shape1 = Shape.Scissors;
-                    break;
-            }
-        }
-    }
-
-    class Game1 : Game
-    {
-        public Game1(string s1, string s2)
-        {
-            SetShape1(s1);
-
-            switch (s2)
-            {
-                case "X":
-                    Shape2 = Shape.Rock;
-                    break;
-                case "Y":
-                    Shape2 = Shape.Paper;
-                    break;
-                case "Z":
-                    Shape2 = Shape.Scissors;
-                    break;
-            }
-        }
-    }
-
-    class Game2 : Game
-    {
-        public Game2(string s1, string s2)
-        {
-            SetShape1(s1);
-
-            switch (s2)
-            {
-                case "X":
-                    switch (Shape1)
-                    {
-                        case Shape.Rock:
-                            Shape2 = Shape.Scissors;
-                            break;
-                        case Shape.Paper:
-                            Shape2 = Shape.Rock;
-                            break;
-                        case Shape.Scissors:
-                            Shape2 = Shape.Paper;
-                            break;
-                    }
-                    break;
-                case "Y":
-                    Shape2 = Shape1;
-                    break;
-                case "Z":
-                    switch (Shape1)
-                    {
-                        case Shape.Rock:
-                            Shape2 = Shape.Paper;
-                            break;
-                        case Shape.Paper:
-                            Shape2 = Shape.Scissors;
-                            break;
-                        case Shape.Scissors:
-                            Shape2 = Shape.Rock;
-                            break;
-                    }
                     break;
             }
         }
