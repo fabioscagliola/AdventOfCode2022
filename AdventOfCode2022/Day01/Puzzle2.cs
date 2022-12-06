@@ -2,7 +2,7 @@
 {
     class Puzzle2 : Puzzle, ISolvable
     {
-        public int Solve(string input)
+        public object Solve(string input)
         {
             int result = 0;
             List<int> list = DoList(input);

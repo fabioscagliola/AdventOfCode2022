@@ -2,6 +2,6 @@
 {
     interface ISolvable
     {
-        int Solve(string input);
+        object Solve(string input);
     }
 }

@@ -2,7 +2,7 @@
 {
     class Puzzle1 : Puzzle, ISolvable
     {
-        public int Solve(string input)
+        public object Solve(string input)
         {
             return Solve(input, (Interval interval1, Interval interval2) =>
             {

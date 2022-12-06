@@ -4,7 +4,7 @@ namespace com.fabioscagliola.AdventOfCode2022.Day03
 {
     class Puzzle1 : Puzzle, ISolvable
     {
-        public int Solve(string input)
+        public object Solve(string input)
         {
             MatchCollection matchCollection = GetMatchCollection(input);
 

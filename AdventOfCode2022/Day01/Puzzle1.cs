@@ -2,7 +2,7 @@
 {
     class Puzzle1 : Puzzle, ISolvable
     {
-        public int Solve(string input)
+        public object Solve(string input)
         {
             List<int> list = DoList(input);
             return list.Max();
