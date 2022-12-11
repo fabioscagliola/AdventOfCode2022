@@ -19,8 +19,8 @@ namespace com.fabioscagliola.AdventOfCode2022.Day04
                 int min2 = int.Parse(match.Groups[3].Value);
                 int max2 = int.Parse(match.Groups[4].Value);
 
-                Interval interval1 = new Interval(min1, max1);
-                Interval interval2 = new Interval(min2, max2);
+                Interval interval1 = new(min1, max1);
+                Interval interval2 = new(min2, max2);
 
                 if (func(interval1, interval2))
                     result++;

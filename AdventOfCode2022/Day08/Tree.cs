@@ -10,7 +10,8 @@
 
         public int ColIndex { get; protected set; }
 
-        public Tree(PatchOfTrees patchOfTrees, int rowIndex, int colIndex, int height)        {
+        public Tree(PatchOfTrees patchOfTrees, int rowIndex, int colIndex, int height)
+        {
             PatchOfTrees = patchOfTrees;
             RowIndex = rowIndex;
             ColIndex = colIndex;
