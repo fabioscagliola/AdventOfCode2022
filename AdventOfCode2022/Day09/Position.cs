@@ -16,10 +16,5 @@
         {
             return Math.Abs(position.X - X) < 2 && Math.Abs(position.Y - Y) < 2;
         }
-
-        public override string ToString()
-        {
-            return $"{X}, {Y}";
-        }
     }
 }

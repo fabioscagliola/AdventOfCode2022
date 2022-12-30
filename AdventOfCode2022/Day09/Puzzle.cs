@@ -4,9 +4,7 @@ namespace com.fabioscagliola.AdventOfCode2022.Day09
 {
     public abstract class Puzzle
     {
-        protected abstract int RopeLenght { get; }
-
-        protected int NewMethod(string input)
+        protected static int CountPositions(string input, int RopeLenght)
         {
             Rope rope = new(RopeLenght);
 
@@ -14,8 +12,9 @@ namespace com.fabioscagliola.AdventOfCode2022.Day09
 
             MatchCollection matchCollection = regex.Matches(input);
 
-            foreach (Match match in matchCollection)
+            for (int i = 0; i < matchCollection.Count; i++)
             {
+                Match match = matchCollection[i];
                 Motion motion = (Motion)Enum.Parse(typeof(Motion), match.Groups[1].Value);
                 int distance = int.Parse(match.Groups[2].Value);
                 rope.Head.Move(motion, distance);

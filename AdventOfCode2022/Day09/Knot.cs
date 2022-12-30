@@ -58,5 +58,10 @@
                 KnotMoved?.Invoke(new(motion));
             }
         }
+
+        public override string ToString()
+        {
+            return $"{Position.X}, {Position.Y}";
+        }
     }
 }

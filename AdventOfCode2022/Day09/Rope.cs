@@ -33,22 +33,22 @@ namespace com.fabioscagliola.AdventOfCode2022.Day09
                     int x = prevKnot.Position.X - knot.Position.X;
                     int y = prevKnot.Position.Y - knot.Position.Y;
 
-                    if (x >= 0 && y >= 0)
-                    {
+                    if (x > 0 && y == 0)
+                        motion = Motion.R;
+                    else if (x < 0 && y == 0)
+                        motion = Motion.L;
+                    else if (x == 0 && y > 0)
+                        motion = Motion.U;
+                    else if (x == 0 && y < 0)
+                        motion = Motion.D;
+                    else if (x > 0 && y > 0)
                         motion = Motion.RU;
-                    }
-                    else if (x >= 0 && y <= 0)
-                    {
+                    else if (x > 0 && y < 0)
                         motion = Motion.RD;
-                    }
-                    else if (x <= 0 && y >= 0)
-                    {
+                    else if (x < 0 && y > 0)
                         motion = Motion.LU;
-                    }
-                    else if (x <= 0 && y <= 0)
-                    {
+                    else if (x < 0 && y < 0)
                         motion = Motion.LD;
-                    }
 
                     knot.Move(motion, 1);
                 }
@@ -61,8 +61,8 @@ namespace com.fabioscagliola.AdventOfCode2022.Day09
         {
             StringBuilder stringBuilder = new();
             foreach (Knot knot in KnotList)
-                stringBuilder.Append($"{knot.Position}; ");
-            stringBuilder.Remove (stringBuilder.Length- 2, 2);
+                stringBuilder.Append($"{knot}; ");
+            stringBuilder.Remove(stringBuilder.Length - 2, 2);
             return stringBuilder.ToString();
         }
     }
