@@ -9,12 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Day07\**" />
-    <EmbeddedResource Remove="Day07\**" />
-    <None Remove="Day07\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="Day01\Input1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -31,6 +25,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Day06\Input1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Day07\Input1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Day08\Input1.txt">
