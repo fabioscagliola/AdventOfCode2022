@@ -1,6 +1,6 @@
 ﻿namespace com.fabioscagliola.AdventOfCode2022.Day07
 {
-    public class Puzzle1 : Puzzle, ISolvable
+    public class Puzzle2 : Puzzle, ISolvable
     {
         public object Solve(string input)
         {
@@ -8,10 +8,12 @@
 
             List<Folder> folderList = TraverseTree(fileSystem.Root, (Folder folder) =>
             {
-                return folder.Size < 100000;
+                return fileSystem.AvailableSpace + folder.Size > 30000000;
             });
 
-            return folderList.Sum(folder => folder.Size);
+            folderList.Sort((a, b) => a.Size.CompareTo(b.Size));
+
+            return folderList[0].Size;
         }
     }
 }
